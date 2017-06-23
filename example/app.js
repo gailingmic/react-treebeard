@@ -62,7 +62,7 @@ class DemoTree extends React.Component {
     }
 
     node.active = true;
-    if (node.children) {
+    if (node.children && node.children.length > 0) {
       node.toggled = toggled;
     }
 
@@ -93,9 +93,7 @@ class DemoTree extends React.Component {
 
     return (
       <div>
-        <button onClick={this.toggleVis.bind(this)} style={{ color: 'black' }}>
-          Toggle visibility Active:
-          {' '}
+        <button onClick={this.toggleVis.bind(this)} style={{ textAlign: 'left', width: '100%', color: 'black', backgroundColor: 'white', border: '1px solid #7a7a7a' }}>
           {cursor !== undefined ? cursor.name : 'Nothing'}
         </button>
         {this.state.visibility
